@@ -1,0 +1,28 @@
+﻿<Window x:Class="LTIPCM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:LTIPCM"
+        xmlns:view="clr-namespace:LTIPCM.View"
+        Title="LTIPCM" Height="700" Width="1100"
+        DataContext="{Binding MainWindowsViewModel, Source={StaticResource VMLocator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" Name="NaviBar" Orientation="Horizontal" Margin="5">
+            <Button Command="{Binding OpenClientManagerCommand}">客户管理</Button>
+            <Button>案件管理</Button>
+            <Button>报价管理</Button>
+            <Button>账单管理</Button>
+            <Button>代理机构管理</Button>
+            <Button Name="btnTest" Click="btnTest_Click">TestButton</Button>
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <ContentControl Content="{Binding CurrentViewModel}" />
+        </Grid>
+        
+    </Grid>
+</Window>

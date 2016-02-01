@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LTIPCM", "LTIPCM\LTIPCM.csproj", "{C5187FFA-63F4-4FB2-BCA2-6DB404FF6A96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{77596E04-98F4-46D4-87BD-824CBCA47AE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5187FFA-63F4-4FB2-BCA2-6DB404FF6A96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5187FFA-63F4-4FB2-BCA2-6DB404FF6A96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5187FFA-63F4-4FB2-BCA2-6DB404FF6A96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5187FFA-63F4-4FB2-BCA2-6DB404FF6A96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77596E04-98F4-46D4-87BD-824CBCA47AE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77596E04-98F4-46D4-87BD-824CBCA47AE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77596E04-98F4-46D4-87BD-824CBCA47AE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77596E04-98F4-46D4-87BD-824CBCA47AE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

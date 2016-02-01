@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="LTIPCM.View.ClientView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Platform"
+             xmlns:local="clr-namespace:LTIPCM.View"
+             xmlns:MQControls="clr-namespace:MQControls;assembly=MQControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="300">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Name="MainVerticalSplitter" Width="5" />
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <HeaderedContentControl Header="Client List">
+                <HeaderedContentControl.Content>
+                    <StackPanel>
+                        <ListView Name="lvClient" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Clients}"
+                              ItemTemplate="{StaticResource ClientListSelectorTemplate}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseDoubleClick">
+                                    <cmd:EventToCommand Command="{Binding OpenExistedClientTabCommand}" CommandParameter="{Binding ElementName=lvClient, Path=SelectedItem}"></cmd:EventToCommand>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </ListView>
+                    </StackPanel>
+                </HeaderedContentControl.Content>
+            </HeaderedContentControl>
+        </StackPanel>
+
+        <GridSplitter Grid.Column="1" Width="5" ResizeBehavior="PreviousAndNext"></GridSplitter>
+        <Grid Grid.Column="2">
+            <!--TabControl ItemsSource="{Binding ClientTabVMs}" SelectedItem="{Binding SelectedClientTabItem}"
+                    ItemTemplate="{StaticResource ClientTabItemHeaderTemplate}" ContentTemplate="{StaticResource ClientTabItemContentTemplate}"/-->
+            <MQControls:TabControl ItemsSource="{Binding ClientTabVMs}" SelectedItem="{Binding SelectedClientTabItem}"
+                                   ItemTemplate="{StaticResource ClientTabItemHeaderTemplate}" ContentTemplate="{StaticResource ClientTabItemContentTemplate}"/>
+        </Grid>
+    </Grid>
+</UserControl>
